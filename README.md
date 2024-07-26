@@ -9,12 +9,13 @@ Embedding models using Ollama
 
 ## Background
 
-Ollama provides Few embedding models. This plugin enables the usage of those models using Ollama.
+Ollama provides Few embedding models. This plugin enables the usage of those models using llm and ollama embeddings..
 
 To utilize these models, you need to have an instance of the Ollama server running.
 
 See also [Embeddings: What they are and why they matter](https://simonillison.net/2023/Oct/23/embeddings/) for background on embeddings and an explanation of the LLM embeddings tool.
 
+See also [Ollama Embeddings Models Blog](https://ollama.com/blog/embedding-models)
 
 ## Installation
 
