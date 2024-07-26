@@ -1,0 +1,26 @@
+[project]
+name = "llm-embed-ollama"
+version = "0.1.1"
+description = "Embedding models using Ollama pulled models"
+readme = "README.md"
+authors = [{name = "Sukhbinder Singh"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "llm",
+    "ollama",
+]
+
+[project.urls]
+Homepage = "https://github.com/sukhbinder/llm-embed-ollama"
+Changelog = "https://github.com/sukhbinder/llm-embed-ollama/releases"
+Issues = "https://github.com/sukhbinder/llm-embed-ollama/issues"
+CI = "https://github.com/sukhbinder/llm-embed-ollama/actions"
+
+[project.entry-points.llm]
+embed_ollama = "llm_embed_ollama"
+
+[project.optional-dependencies]
+test = ["pytest"]
