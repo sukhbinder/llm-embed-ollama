@@ -3,6 +3,7 @@ from llm.cli import cli
 import llm
 from llm.plugins import pm
 import pytest
+import os
 
 
 
