@@ -1,7 +1,14 @@
 from click.testing import CliRunner
 from llm.cli import cli
 import llm
+from llm.plugins import pm
 
+
+
+def test_plugin_is_installed():
+    names = [mod.__name__ for mod in pm.get_plugins()]
+    assert "llm_embed_ollama" in names
+    
 
 def test_ollama_embed_small():
     model = llm.get_embedding_model("all-minilm")
