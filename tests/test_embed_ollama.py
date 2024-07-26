@@ -2,6 +2,7 @@ from click.testing import CliRunner
 from llm.cli import cli
 import llm
 from llm.plugins import pm
+import pytest
 
 
 
