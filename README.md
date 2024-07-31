@@ -39,7 +39,7 @@ To get started embedding a single string, run the following:
 
 Make sure you have the appropriate ollama model.
 
-``bash
+```bash
 ollama pull all-minilm
 ```
 
