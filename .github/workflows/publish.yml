@@ -48,8 +48,9 @@ jobs:
         pip install setuptools wheel twine build
     - name: Publish
       env:
-        TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        name: pypi
+        url: https://pypi.org/p/llm-embed-ollama
       run: |
-        python -m build
-        twine upload dist/*
+          python setup.py sdist bdist_wheel
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
