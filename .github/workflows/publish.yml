@@ -51,6 +51,8 @@ jobs:
         name: pypi
         url: https://pypi.org/p/llm-embed-ollama
       run: |
-          python setup.py sdist bdist_wheel
+          python -m build
     - name: Publish package distributions to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+          packages-dir: ./dist
