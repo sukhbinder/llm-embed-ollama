@@ -37,6 +37,12 @@ See [the LLM documentation](https://llm.datasette.io/en/stable/embeddings/index.
 
 To get started embedding a single string, run the following:
 
+Make sure you have the appropriate ollama model.
+
+``bash
+ollama pull all-minilm
+```
+
 ```bash
 llm embed -m all-minilm -c 'Hello world'
 ```
