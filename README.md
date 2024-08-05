@@ -5,7 +5,14 @@
 [![Tests](https://github.com/sukhbinder/llm-embed-ollama/workflows/Test/badge.svg)](https://github.com/sukhbinder/llm-embed-ollama/actions?query=workflow%3ATest)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/sukhbinder/llm-embed-ollama/blob/main/LICENSE)
 
-Embedding models using Ollama
+[LLM](https://llm.datasette.io/) plugin providing access to embedding models running on local [Ollama](https://ollama.ai) server.
+
+
+## Installation
+
+Install this plugin in the same environment as [LLM](https://llm.datasette.io/).
+
+    llm install llm-embed-ollama
 
 ## Background
 
@@ -17,15 +24,10 @@ See also [Embeddings: What they are and why they matter](https://simonillison.ne
 
 See also [Ollama Embeddings Models Blog](https://ollama.com/blog/embedding-models)
 
-## Installation
-
-Install this plugin in the same environment as [LLM](https://llm.datasette.io/).
-
-    llm install llm-embed-ollama
 
 ## Usage
 
-This plugin adds support for three new embedding models:
+This plugin adds support for three new embedding models available in ollama:
 
 - all-minilm
 - nomic-embed-text
@@ -55,7 +57,9 @@ llm embed-multi ollama-readmes \
     -m all-minilm \
     --files . '**/README.md' --store
 ```
+
 Then you can run searches against them like this:
+
 ```bash
 llm similar ollama-readmes -c 'utility functions'
 ```
@@ -64,15 +68,19 @@ Add `| jq` to pipe it through [jq](https://jqlang.github.io/jq/) for pretty-prin
 ## Development
 
 To set up this plugin locally, first checkout the code. Then create a new virtual environment:
+
 ```bash
 cd llm-embed-ollama
 python3 -m venv venv
 source venv/bin/activate
 ```
+
 Now install the dependencies and test dependencies:
+
 ```bash
 llm install -e '.[test]'
 ```
+
 To run the tests:
 ```bash
 pytest
