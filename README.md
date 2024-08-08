@@ -27,7 +27,7 @@ See also [Ollama Embeddings Models Blog](https://ollama.com/blog/embedding-model
 
 ## Usage
 
-This plugin adds support for three new embedding models available in ollama:
+This plugin adds support for the following embedding models available in ollama:
 
 - all-minilm
 - nomic-embed-text
