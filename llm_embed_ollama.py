@@ -10,6 +10,9 @@ def register_embedding_models(register):
         "mxbai-embed-large",
         "nomic-embed-text",
         "all-minilm",
+        "bge-large",
+        "bge-m3"
+        
     ):
         register(OllamaEmbeddingModel(model_id))
 
