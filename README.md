@@ -32,6 +32,8 @@ This plugin adds support for three new embedding models available in ollama:
 - all-minilm
 - nomic-embed-text
 - mxbai-embed-large
+- bge-large: Embedding model from BAAI mapping texts to vectors.
+- bge-m3: BGE-M3 is a new model from BAAI distinguished for its versatility in Multi-Functionality, Multi-Linguality, and Multi-Granularity.
 
 The models needs to be downloaded. Using `ollama pull <model-name> the first time you try to use them.
 
