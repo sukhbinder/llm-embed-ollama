@@ -67,6 +67,25 @@ llm similar ollama-readmes -c 'utility functions'
 ```
 Add `| jq` to pipe it through [jq](https://jqlang.github.io/jq/) for pretty-printed output, or ` | jq .id` to just see the matching filenames.
 
+### Prefix and suffix support
+
+Some embedding models expect prefixed or suffixed input (for example, instruction-style or query embeddings).
+
+This plugin supports optional embedding prefixes and suffixes provided by `llm`. When a prefix or suffix is set on the embedding model, it is automatically applied before generating embeddings.
+
+Example (Python):
+
+```python
+import llm
+
+model = llm.get_embedding_model("all-minilm")
+model.prefix = "query: "
+
+embedding = model.embed("hello world")
+```
+This is useful for models that distinguish between query and document embeddings.
+
+
 ## Development
 
 To set up this plugin locally, first checkout the code. Then create a new virtual environment:

@@ -22,9 +22,27 @@ class OllamaEmbeddingModel(llm.EmbeddingModel):
         self.model_id = model_id
         self._model = None
 
+    def _apply_prefix_suffix(self, text: str) -> str:
+        prefix = getattr(self, "prefix", None)
+        suffix = getattr(self, "suffix", None)
+
+        if prefix:
+            text = f"{prefix}{text}"
+        if suffix:
+            text = f"{text}{suffix}"
+        return text
+
     def embed_batch(self, texts):
         if self._model is None:
             self._model=embeddings
         # self.embeddings(model="mxbai-embed-large", prompt=d)
-        results = [self._model(model=self.model_id, prompt=text[:MAX_LENGTH])["embedding"] for text in texts]
+        processed = [
+            self._apply_prefix_suffix(text)[:MAX_LENGTH]
+            for text in texts
+        ]
+
+        results = [
+            self._model(model=self.model_id, prompt=text)["embedding"]
+            for text in processed
+        ]
         return (list(map(float, result)) for result in results)
